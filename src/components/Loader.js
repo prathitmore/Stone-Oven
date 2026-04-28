@@ -84,38 +84,33 @@ export function initLoader(onComplete) {
 
     setTimeout(() => { if(fade) fade.style.opacity = '0'; }, 100);
 
-    let startTime = Date.now();
-
     const updateProgress = () => {
         if (transitionStarted && progress >= 100) return;
 
-        const timeElapsed = Date.now() - startTime;
+        // 1. TIMED PROGRESS (Guaranteed movement)
+        // Increment by a small amount every frame
+        const increment = isMobile ? 0.8 : 0.4; 
+        progress += increment;
 
-        if (!isMobile) {
-            // DESKTOP: Buffer sync with a 2s safety fallback to start progress regardless
-            if (video.readyState < 3 && timeElapsed < 2000) {
-                if (loadStatus) loadStatus.innerText = '● BUFFERING...';
-                requestAnimationFrame(updateProgress);
-                return;
-            }
-            if (video.paused) video.play().catch(() => {});
+        // 2. VIDEO SYNC (Optional overlay)
+        if (video.readyState >= 3 && video.duration > 0) {
+            const videoProgress = (video.currentTime / video.duration) * 100;
+            // If video is further ahead, jump to its progress
+            if (videoProgress > progress) progress = videoProgress;
             if (loadStatus) loadStatus.innerText = '● AUTHENTIC CRAFT';
-
-            if (video.duration > 0) {
-                progress = Math.max(progress, (video.currentTime / video.duration) * 100);
-                if (video.ended || video.currentTime >= video.duration - 0.1) progress = 100;
-            } else {
-                // Fallback progress if video duration is unknown
-                progress += 0.5;
-            }
-        } else {
-            // MOBILE: ReadyState guard + High speed
-            if (video.readyState < 2 && timeElapsed < 1500) {
-                requestAnimationFrame(updateProgress);
-                return;
-            }
             if (video.paused) video.play().catch(() => {});
-            progress += (Math.random() * 0.8 + 0.4);
+        } else {
+            if (loadStatus) loadStatus.innerText = '● BUFFERING...';
+        }
+
+        // 3. CAP AT 99% UNTIL 3D IS READY
+        if (progress >= 99.5) {
+            const is3DReady = window.hero3DReady || false;
+            if (is3DReady || progress >= 100) {
+                progress = 100;
+            } else {
+                progress = 99.5;
+            }
         }
 
         if (progress >= 100) {
@@ -123,22 +118,11 @@ export function initLoader(onComplete) {
                 transitionStarted = true;
                 startTransition();
             }
-            
-            const is3DReady = window.hero3DReady || false;
-            stallSafetyCounter++;
-
-            // Wait mid-zoom for 3D if not ready
-            if (is3DReady || stallSafetyCounter > 120) {
-                progress = 100;
-            } else {
-                progress = 99.9;
-                if (loadStatus) loadStatus.innerText = '● PREPARING...';
-            }
         }
 
-        if (percEl) percEl.innerText = Math.floor(progress);
-        if (progBar) progBar.style.width = `${progress}%`;
-        if (progDot) progDot.style.left = `${progress}%`;
+        if (percEl) percEl.innerText = Math.floor(Math.min(progress, 100));
+        if (progBar) progBar.style.width = `${Math.min(progress, 100)}%`;
+        if (progDot) progDot.style.left = `${Math.min(progress, 100)}%`;
 
         if (progress < 100 || !transitionStarted) {
             requestAnimationFrame(updateProgress);
