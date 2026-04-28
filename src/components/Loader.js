@@ -6,7 +6,7 @@ export function renderLoader() {
             
             <!-- CINEMATIC VIDEO BACKGROUND -->
             <video id="loader-video" muted playsinline preload="auto" style="position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; object-fit: cover; transform: translate(-50%, -50%) scale(1.01); transition: transform 3.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.5s ease; z-index: 1;">
-                <source src="${baseUrl}stone.mp4" type="video/mp4">
+                <source src="stone.mp4" type="video/mp4">
             </video>
 
             <!-- DARK OVERLAY -->
@@ -14,7 +14,7 @@ export function renderLoader() {
 
             <!-- LOGO IN LOADER -->
             <div class="loader-logo-container" style="position: absolute; top: 2rem; left: 8%; z-index: 4;">
-                <img src="${baseUrl}logo.png" alt="Stone Oven" class="loader-logo-img" style="width: clamp(100px, 20vw, 140px); height: auto; opacity: 0.9; filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));">
+                <img src="logo.png" alt="Stone Oven" class="loader-logo-img" style="width: clamp(100px, 20vw, 140px); height: auto; opacity: 0.9; filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));">
             </div>
 
             <!-- PREMIUM UI RECREATION -->
