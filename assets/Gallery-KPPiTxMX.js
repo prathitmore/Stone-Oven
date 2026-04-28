@@ -1,4 +1,4 @@
-function a(){return`
+function e(){const a="/Stone-Oven/";return`
     <div class="page-container page-gallery" style="padding-top: 160px;">
         <div style="text-align: center; margin-bottom: 4rem; padding: 0 1rem; position: relative; z-index: 2;">
             <h1 class="reveal" style="font-family: var(--font-heading); color: var(--color-primary); font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 0.5rem; letter-spacing: -0.02em;">Our Gallery</h1>
@@ -17,27 +17,27 @@ function a(){return`
                 </div>
                 <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
                     <div class="gallery-item">
-                        <img src="real_gallery/virar_ambience_1.jpg" alt="Virar Ambiance" loading="lazy">
+                        <img src="${a}real_gallery/virar_ambience_1.jpg" alt="Virar Ambiance" loading="lazy">
                         <div class="gallery-overlay"><h3>Premium Dining</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/virar_food_1.jpg" alt="Virar Dining Experience" loading="lazy">
+                        <img src="${a}real_gallery/virar_food_1.jpg" alt="Virar Dining Experience" loading="lazy">
                         <div class="gallery-overlay"><h3>Dining Experience</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/virar_interior_1.jpg" alt="Virar Storefront" loading="lazy">
+                        <img src="${a}real_gallery/virar_interior_1.jpg" alt="Virar Storefront" loading="lazy">
                         <div class="gallery-overlay"><h3>Our Storefront</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/virar_interior_2.jpg" alt="Virar Paneer Pizza" loading="lazy">
+                        <img src="${a}real_gallery/virar_interior_2.jpg" alt="Virar Paneer Pizza" loading="lazy">
                         <div class="gallery-overlay"><h3>Stone Oven Pizza</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/virar_ambience_3.jpg" alt="Virar Vibe" loading="lazy">
+                        <img src="${a}real_gallery/virar_ambience_3.jpg" alt="Virar Vibe" loading="lazy">
                         <div class="gallery-overlay"><h3>Cafe Vibe</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/virar_food_2.jpg" alt="Virar Floral Ceiling Decor" loading="lazy">
+                        <img src="${a}real_gallery/virar_food_2.jpg" alt="Virar Floral Ceiling Decor" loading="lazy">
                         <div class="gallery-overlay"><h3>Festive Vibes</h3></div>
                     </div>
                 </div>
@@ -53,27 +53,27 @@ function a(){return`
                 </div>
                 <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
                     <div class="gallery-item">
-                        <img src="real_gallery/vasai_ambience_2.jpg" alt="Vasai Outdoor Seating" loading="lazy">
+                        <img src="${a}real_gallery/vasai_ambience_2.jpg" alt="Vasai Outdoor Seating" loading="lazy">
                         <div class="gallery-overlay"><h3>Al Fresco Dining</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/vasai_interior_2.jpg" alt="Vasai Indoor Seating" loading="lazy">
+                        <img src="${a}real_gallery/vasai_interior_2.jpg" alt="Vasai Indoor Seating" loading="lazy">
                         <div class="gallery-overlay"><h3>Designer Chairs</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/vasai_food_1.jpg" alt="Vasai Sizzler" loading="lazy">
+                        <img src="${a}real_gallery/vasai_food_1.jpg" alt="Vasai Sizzler" loading="lazy">
                         <div class="gallery-overlay"><h3>Sizzling Hot</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/vasai_food_2.jpg" alt="Vasai Mezze Platter" loading="lazy">
+                        <img src="${a}real_gallery/vasai_food_2.jpg" alt="Vasai Mezze Platter" loading="lazy">
                         <div class="gallery-overlay"><h3>Mezze Platter</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/vasai_interior_1.jpg" alt="Vasai Ceiling Decor" loading="lazy">
+                        <img src="${a}real_gallery/vasai_interior_1.jpg" alt="Vasai Ceiling Decor" loading="lazy">
                         <div class="gallery-overlay"><h3>Wicker Lamps</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/vasai_ambience_5.jpg" alt="Vasai Main Hall" loading="lazy">
+                        <img src="${a}real_gallery/vasai_ambience_5.jpg" alt="Vasai Main Hall" loading="lazy">
                         <div class="gallery-overlay"><h3>Vasai Main Hall</h3></div>
                     </div>
                 </div>
@@ -89,23 +89,23 @@ function a(){return`
                 </div>
                 <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
                     <div class="gallery-item">
-                        <img src="real_gallery/boisar_ambience_1.jpg" alt="Boisar Interior Neon" loading="lazy">
+                        <img src="${a}real_gallery/boisar_ambience_1.jpg" alt="Boisar Interior Neon" loading="lazy">
                         <div class="gallery-overlay"><h3>Cozy Vibe</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/boisar_food_1.jpg" alt="Boisar Dessert" loading="lazy">
+                        <img src="${a}real_gallery/boisar_food_1.jpg" alt="Boisar Dessert" loading="lazy">
                         <div class="gallery-overlay"><h3>Sweet Treat</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/boisar_food_3.jpg" alt="Boisar Storefront" loading="lazy">
+                        <img src="${a}real_gallery/boisar_food_3.jpg" alt="Boisar Storefront" loading="lazy">
                         <div class="gallery-overlay"><h3>Grand Opening</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/boisar_ambience_5.jpg" alt="Boisar Food Spread" loading="lazy">
+                        <img src="${a}real_gallery/boisar_ambience_5.jpg" alt="Boisar Food Spread" loading="lazy">
                         <div class="gallery-overlay"><h3>Feast Table</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/boisar_ambience_3.jpg" alt="Boisar Bao Buns" loading="lazy">
+                        <img src="${a}real_gallery/boisar_ambience_3.jpg" alt="Boisar Bao Buns" loading="lazy">
                         <div class="gallery-overlay"><h3>Bao Buns</h3></div>
                     </div>
                 </div>
@@ -121,23 +121,23 @@ function a(){return`
                 </div>
                 <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
                     <div class="gallery-item">
-                        <img src="real_gallery/palghar_ambience_1.jpg" alt="Palghar Storefront" loading="lazy">
+                        <img src="${a}real_gallery/palghar_ambience_1.jpg" alt="Palghar Storefront" loading="lazy">
                         <div class="gallery-overlay"><h3>Our Storefront</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/palghar_interior_2.jpg" alt="Palghar Neon Sign" loading="lazy">
+                        <img src="${a}real_gallery/palghar_interior_2.jpg" alt="Palghar Neon Sign" loading="lazy">
                         <div class="gallery-overlay"><h3>Neon Signs</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/palghar_ambience_3.jpg" alt="Palghar Pizza" loading="lazy">
+                        <img src="${a}real_gallery/palghar_ambience_3.jpg" alt="Palghar Pizza" loading="lazy">
                         <div class="gallery-overlay"><h3>Stone Oven Pizza</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/real_palghar_1.jpg" alt="Palghar Outdoor Area" loading="lazy">
+                        <img src="${a}real_gallery/real_palghar_1.jpg" alt="Palghar Outdoor Area" loading="lazy">
                         <div class="gallery-overlay"><h3>Garden Entrance</h3></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="real_gallery/palghar_food_3.jpg" alt="Palghar Pasta" loading="lazy">
+                        <img src="${a}real_gallery/palghar_food_3.jpg" alt="Palghar Pasta" loading="lazy">
                         <div class="gallery-overlay"><h3>Creamy Pasta</h3></div>
                     </div>
                 </div>
@@ -199,4 +199,4 @@ function a(){return`
             }
         }
     </style>
-    `}function e(){}export{e as initGallery,a as renderGallery};
+    `}function l(){}export{l as initGallery,e as renderGallery};
