@@ -1,4 +1,4 @@
-const baseUrl = import.meta.env.BASE_URL;
+import { getAssetPath } from '../utils/paths';
 
 export const outlets = [
   {
@@ -11,7 +11,7 @@ export const outlets = [
     reviewCount: 426,
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Stone+Oven+Virar+West',
     images: {
-      hero: baseUrl + 'virar.png',
+      hero: getAssetPath('virar.png'),
       gallery: []
     },
     zomatoUrl: 'https://www.zomato.com/mumbai/stone-oven-virar',
@@ -32,7 +32,7 @@ export const outlets = [
     reviewCount: 509,
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Stone+Oven+Palghar',
     images: {
-      hero: baseUrl + 'palghar.png',
+      hero: getAssetPath('palghar.png'),
       gallery: []
     },
     zomatoUrl: 'https://www.zomato.com/mumbai/stone-oven-palghar/',
@@ -51,7 +51,7 @@ export const outlets = [
     reviewCount: 98,
     mapUrl: 'https://maps.app.goo.gl/KGwJ4v3UrEPDogsR9',
     images: {
-      hero: baseUrl + 'boisar1.jpg',
+      hero: getAssetPath('boisar1.jpg'),
       gallery: []
     },
     zomatoUrl: 'coming_soon',
@@ -68,10 +68,10 @@ export const outlets = [
     phone: '+91 9145321000',
     hours: '12:00 PM - 11:00 PM',
     rating: 4.3,
-    reviewCount: 200, // Estimated from reviews
+    reviewCount: 200, 
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Stone+Oven+Vasai+West',
     images: {
-      hero: baseUrl + 'vasai.jpg',
+      hero: getAssetPath('vasai.jpg'),
       gallery: []
     },
     zomatoUrl: 'https://www.zomato.com/mumbai/stone-oven-vasai/',
@@ -91,7 +91,7 @@ export const outlets = [
     reviewCount: 328,
     mapUrl: 'https://maps.app.goo.gl/aHFgCrWnPMTWauda6',
     images: {
-      hero: baseUrl + 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800',
+      hero: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800',
       gallery: []
     },
     zomatoUrl: 'https://www.zomato.com/mumbai/stone-oven-1-naupada-thane-west',
