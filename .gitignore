@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Large files
+2020-12-13_upscayl_6x_high-fidelity-4x.png
+phone.mp4
+loading.mp4
+stone.mp4
+*.png
+!public/*.png
+!logo.png
+*.jpg
+!public/*.jpg
+!src/**/*.jpg
+*.mp4
+!public/*.mp4
