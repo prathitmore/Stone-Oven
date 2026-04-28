@@ -84,12 +84,16 @@ export function initLoader(onComplete) {
 
     setTimeout(() => { if(fade) fade.style.opacity = '0'; }, 100);
 
+    let startTime = Date.now();
+
     const updateProgress = () => {
         if (transitionStarted && progress >= 100) return;
 
+        const timeElapsed = Date.now() - startTime;
+
         if (!isMobile) {
-            // DESKTOP: Buffer sync
-            if (video.readyState < 3) {
+            // DESKTOP: Buffer sync with a 2s safety fallback to start progress regardless
+            if (video.readyState < 3 && timeElapsed < 2000) {
                 if (loadStatus) loadStatus.innerText = '● BUFFERING...';
                 requestAnimationFrame(updateProgress);
                 return;
@@ -101,11 +105,12 @@ export function initLoader(onComplete) {
                 progress = Math.max(progress, (video.currentTime / video.duration) * 100);
                 if (video.ended || video.currentTime >= video.duration - 0.1) progress = 100;
             } else {
-                progress += 0.3;
+                // Fallback progress if video duration is unknown
+                progress += 0.5;
             }
         } else {
             // MOBILE: ReadyState guard + High speed
-            if (video.readyState < 2) {
+            if (video.readyState < 2 && timeElapsed < 1500) {
                 requestAnimationFrame(updateProgress);
                 return;
             }

@@ -8,19 +8,19 @@ const signatureDishes = [
         id: 'dish-1',
         name: 'Butter Chicken Pizza',
         description: 'Tender tandoori chicken in rich makhani sauce on a stone-fired base.',
-        image: 'masterpiece_pizza_1.png'
+        image: import.meta.env.BASE_URL + 'masterpiece_pizza_1.png'
     },
     {
         id: 'dish-2',
         name: 'Mexican Paneer Pizza',
         description: 'Spicy paneer chunks, jalapeños, and bell peppers.',
-        image: 'masterpiece_pizza_2.png'
+        image: import.meta.env.BASE_URL + 'masterpiece_pizza_2.png'
     },
     {
         id: 'dish-3',
         name: 'BBQ Chicken Pizza',
         description: 'Smoky BBQ sauce reduction, soft paneer chunks.',
-        image: 'masterpiece_pizza_3.png'
+        image: import.meta.env.BASE_URL + 'masterpiece_pizza_3.png'
     }
 ];
 
