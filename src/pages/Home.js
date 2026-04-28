@@ -8,23 +8,24 @@ const signatureDishes = [
         id: 'dish-1',
         name: 'Butter Chicken Pizza',
         description: 'Tender tandoori chicken in rich makhani sauce on a stone-fired base.',
-        image: 'masterpiece_pizza_1.png'
+        image: import.meta.env.BASE_URL + 'masterpiece_pizza_1.png'
     },
     {
         id: 'dish-2',
         name: 'Mexican Paneer Pizza',
-        description: 'Spicy paneer, bell peppers & jalapeños with a zesty Mexican twist.',
-        image: 'masterpiece_pizza_2.png'
+        description: 'Spicy paneer chunks, jalapeños, and bell peppers.',
+        image: import.meta.env.BASE_URL + 'masterpiece_pizza_2.png'
     },
     {
         id: 'dish-3',
         name: 'BBQ Chicken Pizza',
-        description: 'Smoky BBQ sauce over succulent grilled chicken and caramelised red onions.',
-        image: 'masterpiece_pizza_3.png'
+        description: 'Smoky BBQ sauce reduction, soft paneer chunks.',
+        image: import.meta.env.BASE_URL + 'masterpiece_pizza_3.png'
     }
 ];
 
 export function renderHome() {
+    const baseUrl = import.meta.env.BASE_URL;
     return `
         <div class="home-page">
             ${renderHero()}
@@ -41,7 +42,7 @@ export function renderHome() {
             <section class="heritage-section reveal" style="padding: 12vw 5%; background: #080808; display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.03);">
                 <div id="heritage-img-wrap" style="position: relative; perspective: 1200px;">
                     <div id="heritage-card-3d" style="position: relative; border-radius: 4px; overflow: visible; transform-style: preserve-3d; animation: float3d 6s ease-in-out infinite; transition: transform 0.1s ease;">
-                        <img src="virar_drink.jpg" style="width: 100%; height: 60vh; object-fit: cover; border-radius: 4px; display: block; filter: brightness(0.85) contrast(1.1);" alt="Stone Oven Virar Outlet Drink">
+                        <img src="${baseUrl}virar_drink.jpg" style="width: 100%; height: 60vh; object-fit: cover; border-radius: 4px; display: block; filter: brightness(0.85) contrast(1.1);" alt="Stone Oven Virar Outlet Drink">
                         <!-- Cinematic color grade overlay -->
                         <div style="position: absolute; inset: 0; border-radius: 4px; background: linear-gradient(135deg, rgba(255,60,0,0.12) 0%, transparent 50%, rgba(0,0,0,0.4) 100%); pointer-events: none;"></div>
                         <!-- Shimmer scan line -->
@@ -99,8 +100,8 @@ export function renderHome() {
 
                 <!-- Floating Ingredients (Parallax Layer 2) -->
                 <div id="masterpiece-ingredients" style="position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: 0.4; transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);">
-                    <img src="ingredients_flying.png" style="position: absolute; top: -5%; left: -5%; width: 50vw; transform: rotate(-10deg); filter: blur(2px);">
-                    <img src="ingredients_flying.png" style="position: absolute; bottom: -5%; right: -5%; width: 50vw; transform: scale(-1) rotate(10deg); filter: blur(4px);">
+                    <img src="${baseUrl}ingredients_flying.png" style="position: absolute; top: -5%; left: -5%; width: 50vw; transform: rotate(-10deg); filter: blur(2px);">
+                    <img src="${baseUrl}ingredients_flying.png" style="position: absolute; bottom: -5%; right: -5%; width: 50vw; transform: scale(-1) rotate(10deg); filter: blur(4px);">
                 </div>
 
                 <!-- Content Container (Strict Editorial Grid) -->
@@ -110,7 +111,7 @@ export function renderHome() {
                     <div style="display: flex; align-items: center; justify-content: flex-start; min-height: 50vh;">
                         <div id="hero-pizza-wrap" style="position: relative; width: 100%; max-width: 480px; transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);">
                             <!-- The Main Pizza -->
-                            <img id="masterpiece-img" src="masterpiece_pizza_1.png" style="width: 100%; border-radius: 50%; box-shadow: 0 40px 80px rgba(0,0,0,0.9), 0 0 120px rgba(255,60,0,0.1); transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
+                            <img id="masterpiece-img" src="${baseUrl}masterpiece_pizza_1.png" style="width: 100%; border-radius: 50%; box-shadow: 0 40px 80px rgba(0,0,0,0.9), 0 0 120px rgba(255,60,0,0.1); transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
                             
                             <!-- Ornament: Rotating Text Ring (Tighter & Cleaner) -->
                             <div class="masterpiece-circle-svg-wrap" style="position: absolute; inset: -10%; border-radius: 50%; transform-origin: center; animation: spin-slow 35s linear infinite; pointer-events: none;">

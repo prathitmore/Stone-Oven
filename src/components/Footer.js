@@ -1,10 +1,11 @@
 export function renderFooter() {
+    const baseUrl = import.meta.env.BASE_URL;
     const footer = document.getElementById('footer');
     footer.innerHTML = `
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-brand">
-                    <img src="logo.png" alt="Stone Oven Logo" class="footer-logo-img">
+                    <img src="${baseUrl}logo.png" alt="Stone Oven Logo" class="footer-logo-img">
                     <p>Experience the warmth of authentic stone-oven baking across Maharashtra.</p>
                 </div>
                 <div class="footer-links">
