@@ -9,7 +9,7 @@ export const outlets = [
     reviewCount: 426,
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Stone+Oven+Virar+West',
     images: {
-      hero: '/virar.png',
+      hero: 'virar.png',
       gallery: []
     },
     zomatoUrl: 'https://www.zomato.com/mumbai/stone-oven-virar',
@@ -30,7 +30,7 @@ export const outlets = [
     reviewCount: 509,
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Stone+Oven+Palghar',
     images: {
-      hero: '/palghar.png',
+      hero: 'palghar.png',
       gallery: []
     },
     zomatoUrl: 'https://www.zomato.com/mumbai/stone-oven-palghar/',
@@ -49,7 +49,7 @@ export const outlets = [
     reviewCount: 98,
     mapUrl: 'https://maps.app.goo.gl/KGwJ4v3UrEPDogsR9',
     images: {
-      hero: '/boisar1.jpg',
+      hero: 'boisar1.jpg',
       gallery: []
     },
     zomatoUrl: 'coming_soon',
@@ -69,7 +69,7 @@ export const outlets = [
     reviewCount: 200, // Estimated from reviews
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Stone+Oven+Vasai+West',
     images: {
-      hero: '/vasai.jpg',
+      hero: 'vasai.jpg',
       gallery: []
     },
     zomatoUrl: 'https://www.zomato.com/mumbai/stone-oven-vasai/',

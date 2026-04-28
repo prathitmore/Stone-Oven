@@ -32,8 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }, isMobile ? 100 : 2500); 
             
             initLoader(() => {
-                // Done loading - Reveal the rendered app (which is now ready in the background)
+                // Done loading - Reveal the rendered app with a smooth fade-in
                 document.body.style.overflow = '';
+                document.getElementById('app').classList.add('loaded');
+                document.getElementById('navbar').classList.add('loaded');
+                document.getElementById('footer').classList.add('loaded');
                 
                 setTimeout(() => {
                     initAnimations();

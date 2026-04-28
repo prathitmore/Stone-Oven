@@ -4,7 +4,7 @@ export function renderNavbar() {
         <nav class="navbar">
             <div class="nav-container">
                 <a href="#/" class="logo">
-                    <img src="/logo.png" alt="Stone Oven Logo" class="nav-logo-img">
+                    <img src="logo.png" alt="Stone Oven Logo" class="nav-logo-img">
                 </a>
                 
                 <div class="mobile-menu-toggle" id="mobile-toggle" style="display: none;">

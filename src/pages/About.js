@@ -76,7 +76,7 @@ export function renderAbout() {
 
                 <!-- FOOTER BRANDING -->
                 <div class="reveal" style="margin-top: 12rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 6rem;">
-                    <img src="/logo.png" alt="Stone Oven" style="height: 60px; opacity: 0.3; filter: grayscale(1); margin-bottom: 2rem;">
+                    <img src="logo.png" alt="Stone Oven" style="height: 60px; opacity: 0.3; filter: grayscale(1); margin-bottom: 2rem;">
                     <p style="color: rgba(255,255,255,0.3); font-size: 0.8rem; letter-spacing: 0.4em; text-transform: uppercase;">Est. 2018 • Premium Dining</p>
                 </div>
 
