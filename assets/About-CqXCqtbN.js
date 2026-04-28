@@ -1,4 +1,4 @@
-import{o as i}from"./three.module-EqAcmZ32.js";import{i as o}from"./HeatFlow-DDV4VBE7.js";function s(){return`
+import{o as i}from"./three.module-DRDOGXzl.js";import{i as o}from"./HeatFlow-nij2Dcjl.js";function s(){return`
         <div class="about-page" style="position: relative; overflow: hidden; background: #0c0b0a; color: #fff;">
             <!-- INTERACTIVE 3D HEAT FLOW -->
             <canvas id="about-heat-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.4;"></canvas>
@@ -70,7 +70,7 @@ import{o as i}from"./three.module-EqAcmZ32.js";import{i as o}from"./HeatFlow-DDV
 
                 <!-- FOOTER BRANDING -->
                 <div class="reveal" style="margin-top: 12rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 6rem;">
-                    <img src="/logo.png" alt="Stone Oven" style="height: 60px; opacity: 0.3; filter: grayscale(1); margin-bottom: 2rem;">
+                    <img src="logo.png" alt="Stone Oven" style="height: 60px; opacity: 0.3; filter: grayscale(1); margin-bottom: 2rem;">
                     <p style="color: rgba(255,255,255,0.3); font-size: 0.8rem; letter-spacing: 0.4em; text-transform: uppercase;">Est. 2018 • Premium Dining</p>
                 </div>
 

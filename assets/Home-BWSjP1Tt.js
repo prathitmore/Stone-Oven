@@ -1,4 +1,4 @@
-import{W as L,A as B,S as Y,F as D,P as H,a as N,b as R,V as $,M as O,B as F,c as k,d as _,e as X,C as q,o as W}from"./three.module-EqAcmZ32.js";import{i as j}from"./tilt-fQ6J8_vA.js";function U(){return`
+import{W as L,A as B,S as Y,F as D,P as H,a as N,b as R,V as $,M as O,B as F,c as k,d as _,e as X,C as q,o as W}from"./three.module-DRDOGXzl.js";import{i as j}from"./tilt-fQ6J8_vA.js";function U(){return`
         <section class="hero-section" style="position: relative; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #1a0f0a 0%, #000 100%);">
             <canvas id="hero-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: auto;"></canvas>
             
@@ -204,7 +204,7 @@ import{W as L,A as B,S as Y,F as D,P as H,a as N,b as R,V as $,M as O,B as F,c a
                 
                 gl_FragColor = vec4(color, a);
             }
-        `}),M=new X(r,s);C.add(M);let w=0,b=0,z=0,T=0,S=0,A=0;const l=window.innerWidth/2,d=window.innerHeight/2,c=(o,E)=>{w=(o-l)*.002,b=(E-d)*.002,S=o/window.innerWidth,A=1-E/window.innerHeight;const P=document.getElementById("hero-light");P&&(P.style.background=`radial-gradient(circle 800px at ${o}px ${E}px, rgba(255, 60, 0, 0.06), transparent)`)};document.addEventListener("mousemove",o=>c(o.clientX,o.clientY)),document.addEventListener("touchstart",o=>{o.touches.length>0&&c(o.touches[0].clientX,o.touches[0].clientY)},{passive:!0}),document.addEventListener("touchmove",o=>{o.touches.length>0&&c(o.touches[0].clientX,o.touches[0].clientY)},{passive:!0});const p=new q;function y(){requestAnimationFrame(y);const o=p.getElapsedTime();z=w*2,T=b*2,u.position.x+=(z-u.position.x)*.02,u.position.y+=(10+T-u.position.y)*.02,u.lookAt(0,5,-20),t.uniforms.uTime.value=o,t.uniforms.uMouse.value.x+=(S-t.uniforms.uMouse.value.x)*.05,t.uniforms.uMouse.value.y+=(A-t.uniforms.uMouse.value.y)*.05,s.uniforms.uTime.value=o,v.render(C,u),window.hero3DReady||(window.hero3DReady=!0)}y();const I=()=>{u.aspect=window.innerWidth/window.innerHeight,u.updateProjectionMatrix(),v.setSize(window.innerWidth,window.innerHeight)};window.removeEventListener("resize",window._heroResizeHandler),window._heroResizeHandler=I,window.addEventListener("resize",I)}const G=[{id:"dish-1",name:"Butter Chicken Pizza",description:"Tender tandoori chicken in rich makhani sauce on a stone-fired base.",image:"/masterpiece_pizza_1.png"},{id:"dish-2",name:"Mexican Paneer Pizza",description:"Spicy paneer, bell peppers & jalapeños with a zesty Mexican twist.",image:"/masterpiece_pizza_2.png"},{id:"dish-3",name:"BBQ Chicken Pizza",description:"Smoky BBQ sauce over succulent grilled chicken and caramelised red onions.",image:"/masterpiece_pizza_3.png"}];function Q(){return`
+        `}),M=new X(r,s);C.add(M);let w=0,b=0,z=0,T=0,S=0,A=0;const l=window.innerWidth/2,d=window.innerHeight/2,c=(o,E)=>{w=(o-l)*.002,b=(E-d)*.002,S=o/window.innerWidth,A=1-E/window.innerHeight;const P=document.getElementById("hero-light");P&&(P.style.background=`radial-gradient(circle 800px at ${o}px ${E}px, rgba(255, 60, 0, 0.06), transparent)`)};document.addEventListener("mousemove",o=>c(o.clientX,o.clientY)),document.addEventListener("touchstart",o=>{o.touches.length>0&&c(o.touches[0].clientX,o.touches[0].clientY)},{passive:!0}),document.addEventListener("touchmove",o=>{o.touches.length>0&&c(o.touches[0].clientX,o.touches[0].clientY)},{passive:!0});const p=new q;function y(){requestAnimationFrame(y);const o=p.getElapsedTime();z=w*2,T=b*2,u.position.x+=(z-u.position.x)*.02,u.position.y+=(10+T-u.position.y)*.02,u.lookAt(0,5,-20),t.uniforms.uTime.value=o,t.uniforms.uMouse.value.x+=(S-t.uniforms.uMouse.value.x)*.05,t.uniforms.uMouse.value.y+=(A-t.uniforms.uMouse.value.y)*.05,s.uniforms.uTime.value=o,v.render(C,u),window.hero3DReady||(window.hero3DReady=!0)}y();const I=()=>{u.aspect=window.innerWidth/window.innerHeight,u.updateProjectionMatrix(),v.setSize(window.innerWidth,window.innerHeight)};window.removeEventListener("resize",window._heroResizeHandler),window._heroResizeHandler=I,window.addEventListener("resize",I)}const G=[{id:"dish-1",name:"Butter Chicken Pizza",description:"Tender tandoori chicken in rich makhani sauce on a stone-fired base.",image:"masterpiece_pizza_1.png"},{id:"dish-2",name:"Mexican Paneer Pizza",description:"Spicy paneer, bell peppers & jalapeños with a zesty Mexican twist.",image:"masterpiece_pizza_2.png"},{id:"dish-3",name:"BBQ Chicken Pizza",description:"Smoky BBQ sauce over succulent grilled chicken and caramelised red onions.",image:"masterpiece_pizza_3.png"}];function Q(){return`
         <div class="home-page">
             ${U()}
 
@@ -220,7 +220,7 @@ import{W as L,A as B,S as Y,F as D,P as H,a as N,b as R,V as $,M as O,B as F,c a
             <section class="heritage-section reveal" style="padding: 12vw 5%; background: #080808; display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.03);">
                 <div id="heritage-img-wrap" style="position: relative; perspective: 1200px;">
                     <div id="heritage-card-3d" style="position: relative; border-radius: 4px; overflow: visible; transform-style: preserve-3d; animation: float3d 6s ease-in-out infinite; transition: transform 0.1s ease;">
-                        <img src="/virar_drink.jpg" style="width: 100%; height: 60vh; object-fit: cover; border-radius: 4px; display: block; filter: brightness(0.85) contrast(1.1);" alt="Stone Oven Virar Outlet Drink">
+                        <img src="virar_drink.jpg" style="width: 100%; height: 60vh; object-fit: cover; border-radius: 4px; display: block; filter: brightness(0.85) contrast(1.1);" alt="Stone Oven Virar Outlet Drink">
                         <!-- Cinematic color grade overlay -->
                         <div style="position: absolute; inset: 0; border-radius: 4px; background: linear-gradient(135deg, rgba(255,60,0,0.12) 0%, transparent 50%, rgba(0,0,0,0.4) 100%); pointer-events: none;"></div>
                         <!-- Shimmer scan line -->
@@ -278,8 +278,8 @@ import{W as L,A as B,S as Y,F as D,P as H,a as N,b as R,V as $,M as O,B as F,c a
 
                 <!-- Floating Ingredients (Parallax Layer 2) -->
                 <div id="masterpiece-ingredients" style="position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: 0.4; transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);">
-                    <img src="/ingredients_flying.png" style="position: absolute; top: -5%; left: -5%; width: 50vw; transform: rotate(-10deg); filter: blur(2px);">
-                    <img src="/ingredients_flying.png" style="position: absolute; bottom: -5%; right: -5%; width: 50vw; transform: scale(-1) rotate(10deg); filter: blur(4px);">
+                    <img src="ingredients_flying.png" style="position: absolute; top: -5%; left: -5%; width: 50vw; transform: rotate(-10deg); filter: blur(2px);">
+                    <img src="ingredients_flying.png" style="position: absolute; bottom: -5%; right: -5%; width: 50vw; transform: scale(-1) rotate(10deg); filter: blur(4px);">
                 </div>
 
                 <!-- Content Container (Strict Editorial Grid) -->
@@ -289,7 +289,7 @@ import{W as L,A as B,S as Y,F as D,P as H,a as N,b as R,V as $,M as O,B as F,c a
                     <div style="display: flex; align-items: center; justify-content: flex-start; min-height: 50vh;">
                         <div id="hero-pizza-wrap" style="position: relative; width: 100%; max-width: 480px; transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);">
                             <!-- The Main Pizza -->
-                            <img id="masterpiece-img" src="/masterpiece_pizza_1.png" style="width: 100%; border-radius: 50%; box-shadow: 0 40px 80px rgba(0,0,0,0.9), 0 0 120px rgba(255,60,0,0.1); transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
+                            <img id="masterpiece-img" src="masterpiece_pizza_1.png" style="width: 100%; border-radius: 50%; box-shadow: 0 40px 80px rgba(0,0,0,0.9), 0 0 120px rgba(255,60,0,0.1); transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
                             
                             <!-- Ornament: Rotating Text Ring (Tighter & Cleaner) -->
                             <div class="masterpiece-circle-svg-wrap" style="position: absolute; inset: -10%; border-radius: 50%; transform-origin: center; animation: spin-slow 35s linear infinite; pointer-events: none;">
