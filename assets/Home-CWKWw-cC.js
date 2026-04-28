@@ -1,4 +1,4 @@
-import{W as B,A as Y,S as D,F as H,P as $,a as N,b as L,V as O,M as F,B as _,c as P,d as X,e as q,C as W}from"./three.module-CfHucll0.js";import{g as b,o as j}from"./index-CGus58b_.js";import{i as U}from"./tilt-fQ6J8_vA.js";function V(){return`
+import{W as B,A as Y,S as D,F as H,P as $,a as N,b as L,V as O,M as F,B as _,c as P,d as X,e as q,C as W}from"./three.module-CfHucll0.js";import{g as b,o as j}from"./index-DemXuxsN.js";import{i as U}from"./tilt-fQ6J8_vA.js";function V(){return`
         <section class="hero-section" style="position: relative; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #1a0f0a 0%, #000 100%);">
             <canvas id="hero-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: auto;"></canvas>
             

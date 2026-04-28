@@ -1,4 +1,4 @@
-import{o as i}from"./index-CGus58b_.js";import{i as o}from"./HeatFlow-B6VKY3vj.js";import"./three.module-CfHucll0.js";function d(){return`
+import{o as i}from"./index-DemXuxsN.js";import{i as o}from"./HeatFlow-B6VKY3vj.js";import"./three.module-CfHucll0.js";function d(){return`
         <div class="about-page" style="position: relative; overflow: hidden; background: #0c0b0a; color: #fff;">
             <!-- INTERACTIVE 3D HEAT FLOW -->
             <canvas id="about-heat-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.4;"></canvas>
