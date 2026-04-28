@@ -9,8 +9,8 @@ export function renderHero() {
             <div id="hero-light" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(circle 800px at 50% 50%, rgba(255, 60, 0, 0.08), transparent); pointer-events: none; z-index: 1;"></div>
 
             <!-- PRO BRANDING: Heritage Badge -->
-            <div class="reveal" style="position: absolute; top: 15%; left: 50%; transform: translateX(-50%); z-index: 3; text-align: center;">
-                <div style="display: flex; align-items: center; gap: 15px; background: rgba(255,255,255,0.03); padding: 8px 15px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(10px);">
+            <div class="reveal hero-badge-wrap" style="position: absolute; top: 15%; left: 50%; transform: translateX(-50%); z-index: 3; text-align: center; width: 100%;">
+                <div class="heritage-badge" style="display: inline-flex; align-items: center; gap: 15px; background: rgba(255,255,255,0.03); padding: 8px 15px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(10px);">
                     <span style="width: 6px; height: 6px; background: #ff3c00; border-radius: 50%; box-shadow: 0 0 10px #ff3c00;"></span>
                     <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(255,255,255,0.5); font-weight: 700;">Maharashtra's Authentic Heritage</span>
                     <span style="width: 6px; height: 6px; background: #ff3c00; border-radius: 50%; box-shadow: 0 0 10px #ff3c00;"></span>
@@ -30,14 +30,14 @@ export function renderHero() {
                     </p>
                 </div>
                 
-                <div class="hero-btns reveal" style="display: flex; gap: 2rem; justify-content: center; pointer-events: auto;">
-                    <a href="#/menu" class="btn-primary">Explore the Menu</a>
-                    <a href="#/locations" class="btn-premium-outline">Our Destinations</a>
+                <div class="hero-btns reveal" style="display: flex; gap: 2.5rem; justify-content: center; pointer-events: auto; margin-top: 1rem;">
+                    <a href="#/menu" class="btn-primary" style="background: #229561; box-shadow: 0 10px 30px rgba(34, 149, 97, 0.3); border: none;">Explore the Menu</a>
+                    <a href="#/locations" class="btn-primary" style="background: #a8222a; box-shadow: 0 10px 30px rgba(168, 34, 42, 0.3); border: none;">Our Outlets</a>
                 </div>
             </div>
 
             <!-- PRO ALIGNMENT: Heritage Details (Factual) -->
-            <div class="reveal" style="position: absolute; bottom: 8%; right: 4%; z-index: 3; pointer-events: none; text-align: right;">
+            <div class="reveal desktop-only" style="position: absolute; bottom: 8%; right: 4%; z-index: 3; pointer-events: none; text-align: right;">
                 <div style="border-right: 1px solid #ff3c00; padding-right: 20px;">
                    <div style="color: #ff3c00; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 5px; opacity: 0.6;">Established</div>
                    <div style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #fff;">ESTD<span style="color: #ff3c00; font-size: 1.2rem; margin-left:10px;">2018</span></div>
@@ -45,7 +45,7 @@ export function renderHero() {
                 </div>
             </div>
 
-            <div class="reveal" style="position: absolute; bottom: 8%; left: 4%; z-index: 3; pointer-events: none;">
+            <div class="reveal desktop-only" style="position: absolute; bottom: 8%; left: 4%; z-index: 3; pointer-events: none;">
                 <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 20px;">
                    <div style="color: rgba(255,255,255,0.4); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 5px;">Presence in</div>
                    <div style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #fff; font-weight: 800; letter-spacing: 0.1em;">5 KEY DESTINATIONS</div>
@@ -62,6 +62,13 @@ export function renderHero() {
                     0%, 100% { transform: scaleY(1); transform-origin: top; opacity: 1; }
                     50% { transform: scaleY(0.4); transform-origin: top; opacity: 0.3; }
                 }
+                @media (max-width: 768px) {
+                    .desktop-only { display: none !important; }
+                    .hero-scroll-indicator { display: none !important; }
+                    .hero-badge-wrap { top: 14% !important; }
+                    .heritage-badge { padding: 5px 10px !important; gap: 8px !important; }
+                    .heritage-badge span:nth-child(2) { font-size: 0.5rem !important; letter-spacing: 0.15em !important; }
+                }
             </style>
         </section>
     `;
@@ -71,20 +78,27 @@ export function initHero() {
     const canvas = document.getElementById('hero-canvas');
     if (!canvas) return;
 
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: "high-performance" });
+    const isMobile = window.innerWidth <= 768;
+    const renderer = new THREE.WebGLRenderer({ 
+        canvas, 
+        alpha: true, 
+        antialias: !isMobile, // Disable AA on mobile for high FPS
+        powerPreference: "high-performance" 
+    });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.0 : 1.5));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.0;
 
     const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(0x110400, 0.015);
 
-    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(isMobile ? 70 : 50, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(0, 10, 40);
 
     // --- AWARD WINNING LAVA / HEAT FLUID DISPLACEMENT PLANE ---
-    const planeGeo = new THREE.PlaneGeometry(120, 120, 128, 128); // High res plane
+    const planeRes = isMobile ? 48 : 80; // Optimized for faster boot
+    const planeGeo = new THREE.PlaneGeometry(120, 120, planeRes, planeRes); 
     
     // Shader Material for procedural lava displacement and glowing cracks
     const lavaMat = new THREE.ShaderMaterial({
@@ -209,7 +223,7 @@ export function initHero() {
 
 
     // --- REALISTIC ASH/EMBER PARTICLES ---
-    const particleCount = 600;
+    const particleCount = isMobile ? 150 : 600; // Drastic reduction for mobile performance
     const ashGeo = new THREE.BufferGeometry();
     const posArray = new Float32Array(particleCount * 3);
     const scaleArray = new Float32Array(particleCount);
@@ -286,18 +300,29 @@ export function initHero() {
     const windowHalfX = window.innerWidth / 2;
     const windowHalfY = window.innerHeight / 2;
 
-    document.addEventListener('mousemove', (event) => {
-        mouseX = (event.clientX - windowHalfX) * 0.002;
-        mouseY = (event.clientY - windowHalfY) * 0.002;
+    const handleMove = (x, y) => {
+        mouseX = (x - windowHalfX) * 0.002;
+        mouseY = (y - windowHalfY) * 0.002;
         
-        uvMouseX = event.clientX / window.innerWidth;
-        uvMouseY = 1.0 - (event.clientY / window.innerHeight);
+        uvMouseX = x / window.innerWidth;
+        uvMouseY = 1.0 - (y / window.innerHeight);
 
         const light = document.getElementById('hero-light');
         if(light) {
-            light.style.background = `radial-gradient(circle 800px at ${event.clientX}px ${event.clientY}px, rgba(255, 60, 0, 0.06), transparent)`;
+            light.style.background = `radial-gradient(circle 800px at ${x}px ${y}px, rgba(255, 60, 0, 0.06), transparent)`;
         }
-    });
+    };
+
+    document.addEventListener('mousemove', (e) => handleMove(e.clientX, e.clientY));
+    
+    // Mobile Touch Interaction for Hero 3D
+    document.addEventListener('touchstart', (e) => {
+        if(e.touches.length > 0) handleMove(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
+
+    document.addEventListener('touchmove', (e) => {
+        if(e.touches.length > 0) handleMove(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
 
     // --- ANIMATION LOOP ---
     const clock = new THREE.Clock();
@@ -322,13 +347,22 @@ export function initHero() {
         ashMat.uniforms.uTime.value = time;
 
         renderer.render(scene, camera);
+
+        // Signal that the first frame is ready
+        if (!window.hero3DReady) {
+            window.hero3DReady = true;
+        }
     }
 
     animate();
 
-    window.addEventListener('resize', () => {
+    const onResize = () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
-    });
+    };
+
+    window.removeEventListener('resize', window._heroResizeHandler);
+    window._heroResizeHandler = onResize;
+    window.addEventListener('resize', onResize);
 }

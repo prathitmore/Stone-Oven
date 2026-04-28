@@ -13,6 +13,7 @@ export function renderFooter() {
                         <li><a href="#/">Home</a></li>
                         <li><a href="#/locations">Locations</a></li>
                         <li><a href="#/menu">Our Menu</a></li>
+                        <li><a href="#/about">About Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-locations">

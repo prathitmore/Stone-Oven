@@ -22,3 +22,17 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Large files
+2020-12-13_upscayl_6x_high-fidelity-4x.png
+phone.mp4
+loading.mp4
+stone.mp4
+*.png
+!public/*.png
+!logo.png
+*.jpg
+!public/*.jpg
+!src/**/*.jpg
+*.mp4
+!public/*.mp4

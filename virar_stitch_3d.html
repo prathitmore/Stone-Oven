@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#d35400",
+            "background-light": "#f5f5f0",
+            "background-dark": "#0f0f0f",
+          },
+          fontFamily: {
+            "display": ["Work Sans", "sans-serif"],
+            "serif": ["Playfair Display", "serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style type="text/tailwindcss">
+:root {
+  --primary-color: #d35400;
+  --bg-dark: #0f0f0f;
+  --bg-light: #f5f5f0;
+}
+.ember-hover:hover {
+    box-shadow: 0 0 20px var(--primary-color), inset 0 0 10px var(--primary-color);
+    text-shadow: 0 0 8px #fff;
+}
+.stone-texture {
+    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA54rsQNhqs8jHCPUJWX2FOYsfeQEvkCe_VUmj6ttzvkH1e6k-NQFwM9U449A0OwR2e522wWV07u0gwncz75QrlQstT1dKFbKAs-8LL4mZ0zaEzLpu7uvSBLxTvvr3noCLSGWUe9Df2qHaM17HnOkxnY5NaaEV4eGtqiw1I8YrVoWmrgjhM0jizh8B4ObV3KJ760MyMOUkPZHrNddLOH2jezAjb3vfbGdnFDihn8tAMLNSt2ZuPGse1_XmlhSTVCbWZ1SGZl6WDDoJG');
+}
+.fine-grain {
+    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAssbgjUmr_GbWFkXJaQxm-v67aPAJOCtqy7z8zXIAFXkwVTyUwqjBcw2774ZxunjKXuNUxGHsg0AwT12GYlDqn16xiu_tRGJQxhkHlcbyyOJzRTs9FGA6aoDjCLsSfY-70ATj1NfAsGScG-jjidSHtdLHghhxW-tDCrFGWGxYisbxUMJ4Gq9CfiAoL5-PyA7RTu4i8Ag1che9lduYU0eh6WdF6yq5qxUAAQuvqydEfvIkFpqg2jBnHb-mm0a5NwcFP4YlRlxfhU7Su');
+}
+.model-container {
+    perspective: 1000px;
+}
+.pizza-model {
+    transform: rotateX(20deg) rotateY(30deg);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-out;
+}
+.pizza-model:hover {
+    transform: rotateX(10deg) rotateY(50deg);
+}
+.floating-ingredient {
+    animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-x-hidden">
+<header class="fixed top-0 w-full z-50 bg-background-dark/80 backdrop-blur-md border-b border-primary/20">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">local_pizza</span>
+<h1 class="text-xl font-serif font-bold tracking-tight text-white uppercase tracking-[0.2em]">Stone Oven</h1>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest text-slate-300" href="#hero">Experience</a>
+<a class="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest text-slate-300" href="#kitchen">The Kitchen</a>
+<a class="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest text-slate-300" href="#craft">Ingredients</a>
+</nav>
+<button class="bg-primary text-white px-6 py-2 rounded-lg font-bold text-sm uppercase tracking-wider transition-all ember-hover">
+        Book a Table
+      </button>
+</div>
+</header>
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-background-dark" id="hero">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 blur-sm mix-blend-screen" data-alt="Glowing out-of-focus stone oven with warm embers" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHQImhQd_cc_bWHpybrsKTSkBP4hkD0n75vqNvmusHwhLzh4M4OtUqI6BNNlzzK-9JBN4_-UEKnvNiCkRuh7Vw2DKfBS1vgc0rp6ciHkBk9_ntRnAW1_Vz7QuIUDKO1M9TWbXpDH2yRO8rSvU2QfOAfJljgDkvVJRULfTQxC1iX4w9ZzxQHJ6X_BjJgBXxm4IZjm2Nq13893ShLGQhJ7-qUwAIAMk3WT5mnO-aLL80pIW0bIJ-jm0xYqCZs_ra1nZvGzjE0aeH0NuQ');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-primary/20 blur-[100px] rounded-full z-10 pointer-events-none"></div>
+<div class="relative z-20 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 mt-20">
+<div class="w-full max-w-3xl aspect-video model-container flex items-center justify-center mb-8 relative">
+<div class="w-[600px] h-[600px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-radial from-primary/30 to-transparent blur-3xl rounded-full z-0"></div>
+<img alt="3D Stone Fired Pizza" class="pizza-model w-full max-w-[500px] object-contain drop-shadow-2xl z-10 relative" data-alt="High quality rendering of a stone-fired pizza on a charcoal slab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpduSwucm123l3xhzItDX5ThAC7XGWtlXHdgYlO1hkB2PLnupklafgmW7VMXgtZgawUt3ekOUO8IieUaaM94PB8y8GsfO2R-ljuFE6E6DeVzsR18H8F2uHlSCsY3lfYJxi4Rd2jqX6LFFgDfFDneIIqVsAm0QKdVdN5Veia4BfJ7Tyn--d7b1zoO9Uve2eijtKQ7MTPxEPZrSeP2Cur_6YLyKgHxWnAeCsJulYgUt5KNl6SSnzy_-BKfQCeCnyTqdOMGZ9puN6JMq4" style="border-radius: 50%; box-shadow: 0 30px 60px rgba(0,0,0,0.8), inset 0 0 40px rgba(211,84,0,0.5);"/>
+</div>
+<div class="text-center">
+<h2 class="text-6xl md:text-8xl font-serif text-white mb-6 drop-shadow-2xl tracking-wide">Stone Oven</h2>
+<p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl mx-auto font-light tracking-wide uppercase">
+            A 3D Culinary Experience
+        </p>
+<button class="bg-transparent border border-primary text-white px-10 py-4 rounded-xl font-bold text-lg uppercase tracking-[0.2em] transition-all ember-hover relative overflow-hidden group">
+<span class="relative z-10">Enter Experience</span>
+<div class="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform"></div>
+</button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+<span class="material-symbols-outlined text-primary text-4xl drop-shadow-[0_0_10px_rgba(211,84,0,0.8)]">expand_more</span>
+</div>
+</section>
+<section class="py-32 bg-background-dark relative overflow-hidden stone-texture border-y border-white/5" id="kitchen">
+<div class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-background-dark z-10 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-20">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-1/2 space-y-8">
+<h3 class="text-primary font-bold tracking-[0.3em] uppercase text-sm drop-shadow-[0_0_5px_rgba(211,84,0,0.5)]">Cinematic Environment</h3>
+<h2 class="text-5xl md:text-7xl font-serif leading-tight text-white">The Heart<br/>of the Fire</h2>
+<p class="text-lg leading-relaxed text-slate-400 font-light">
+                  Journey through our 3D kitchen space. Feel the warmth of glowing wood-fired ovens and admire the realistic reflections on our copper pots as you explore the space where culinary magic happens.
+                </p>
+</div>
+<div class="w-full md:w-1/2 relative">
+<div class="aspect-video bg-black/50 rounded-2xl border border-white/10 shadow-[0_0_50px_rgba(211,84,0,0.15)] overflow-hidden relative group">
+<img alt="3D Kitchen View" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000 mix-blend-luminosity hover:mix-blend-normal" data-alt="Cinematic view of a glowing wood-fired oven and copper pots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjrb8gCB4jGjajsZv89HyQMr-rYa39E-2ojHRZHZSmPJcbSCi_wNR8kRj3Nw1k8u24DpUd-zXNWC7_FrNmjeSTUjJDp5AGhO03Nfz0uS-OwU51LIiyBMuRX4_RM8NoJlEnQ7xrswP4pdJCkvnVi_WtjwJyOf1zme-PxbbdynYEWR9rmLtY5zwBB1pGyVQZqjLVVkq-NjrRq6HzDyhsficqEYfchBUSAPE_sglR07-MZCus1CkYsuqHNq0137sCP13z0cenfk_xr201"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
+<span class="text-white font-serif italic text-xl">Drag to explore kitchen</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-background-light dark:bg-slate-900/10 text-slate-900 relative overflow-hidden" id="craft">
+<div class="absolute inset-0 fine-grain opacity-50 z-0"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="text-center mb-24">
+<h3 class="text-primary font-bold tracking-[0.3em] uppercase text-sm mb-4">Interactive Elements</h3>
+<h2 class="text-5xl md:text-6xl font-serif text-slate-900 dark:text-white">The Craft Experience</h2>
+<div class="w-24 h-1 bg-primary mx-auto mt-8 shadow-[0_0_10px_rgba(211,84,0,0.5)]"></div>
+</div>
+<div class="relative w-full h-[600px] flex items-center justify-center border border-slate-200 dark:border-white/5 rounded-3xl bg-white/50 dark:bg-black/20 backdrop-blur-sm shadow-2xl">
+<div class="absolute w-64 h-64 bg-[#e6d5c3] rounded-full shadow-inner flex items-center justify-center z-10">
+<p class="font-serif italic text-slate-500 text-lg">The Canvas</p>
+</div>
+<div class="absolute top-20 left-1/4 floating-ingredient cursor-pointer group" style="animation-delay: 0s;">
+<div class="w-32 h-32 relative">
+<img alt="Basil Leaf" class="w-full h-full object-contain drop-shadow-xl group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqR6VXqFGKp8ESQYEAJ9ivopas7JUvF_Q-AzVm0q37KHHzjE_HTFuvrcpnFto63DzXv5iY1zgnmRrn98wH9dGRa7ZhuWJFgF8mS-ucYZzF7W3iNw7wuGke5dX9VWu4vXLsq6Gk6ctyRpysZbZmzAGi88tuPm7_bZgtZ3XHrOIZK0YlaUP-kfVhPXv4Ucb8P5E8P0p2QjoyugAiLXfq_AffCkNR1_CWGjmhYqqL8h_Y1eQnagU3af5vrVYA5b6v8up8VY_2AY1XyNCw" style="filter: drop-shadow(0 15px 15px rgba(0,0,0,0.2)); border-radius: 50%; object-fit: cover;"/>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-background-dark text-white px-3 py-1 rounded text-xs tracking-widest uppercase whitespace-nowrap">Fresh Basil</div>
+</div>
+</div>
+<div class="absolute bottom-32 right-1/4 floating-ingredient cursor-pointer group" style="animation-delay: 1.5s;">
+<div class="w-40 h-40 relative">
+<img alt="Mozzarella" class="w-full h-full object-contain drop-shadow-xl group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCkoidWPiXZFI_P73XCdizIoQx3ilZt_agi8ofrtbElbNrDxHbiBM9DyQAKjoE4YEwt1twBaBY_Lu-Z6yTkmDT47DMF8RoElB-2b7WiJKJ4nVO7YErPCviiEKFoRertzLSRwI9pIgvTqn2ZVnN1ErkwfnMs6D5Njoy4r89tlb2JTuMW860g1SuiYOmBKjF-r_mTzn--CITJnap1pWzwxu2zGA7GCM9TBHZJU_CmGRbJMrEQBmcgtKNFyPlAjcm7KqbEYoOrvdt-0fU" style="filter: drop-shadow(0 15px 15px rgba(0,0,0,0.2)); border-radius: 50%; object-fit: cover;"/>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-background-dark text-white px-3 py-1 rounded text-xs tracking-widest uppercase whitespace-nowrap">Buffalo Mozzarella</div>
+</div>
+</div>
+<div class="absolute top-1/3 right-1/4 floating-ingredient cursor-pointer group" style="animation-delay: 3s;">
+<div class="w-24 h-24 relative">
+<img alt="San Marzano Tomato" class="w-full h-full object-contain drop-shadow-xl group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHT97uujoZRAB0iJFZJpFgiw6CriedjTzAorMOhFOU3hL9vzL6UKcsgvRa0LO_2H0nV3cBh8UR9xk5pFDX0hV0nz1nY15nLFAsq8pMAEQ3M1dAXFt1a00msu09r3WRsyQhDdJM4J-Uua_Pvh0mz9xQo5SNb4DkN-NcudXtuVK1ZUJujx-1pocarq-Q4FakH5wFE94EqGAzMXJVjzAE487tqaPfYjQS9hNRwMavUi0M7CON2V7Ffm9Lvh27nbYr6VC1qcqazE87EbJQ" style="filter: drop-shadow(0 15px 15px rgba(0,0,0,0.2)); border-radius: 50%; object-fit: cover;"/>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-background-dark text-white px-3 py-1 rounded text-xs tracking-widest uppercase whitespace-nowrap">San Marzano</div>
+</div>
+</div>
+<p class="absolute bottom-8 text-sm text-slate-500 uppercase tracking-widest font-bold">Interact with ingredients</p>
+</div>
+</div>
+</section>
+<footer class="bg-background-dark py-16 border-t border-white/5 relative z-20">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl drop-shadow-[0_0_5px_rgba(211,84,0,0.8)]">local_pizza</span>
+<h2 class="text-lg font-serif font-bold tracking-tight text-white uppercase tracking-[0.2em]">Stone Oven</h2>
+</div>
+<p class="text-slate-500 text-sm max-w-xs text-center md:text-left">A high-end 3D culinary experience.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-400 hover:text-primary transition-colors uppercase tracking-widest text-[10px] font-bold" href="#">Instagram</a>
+<a class="text-slate-400 hover:text-primary transition-colors uppercase tracking-widest text-[10px] font-bold" href="#">Twitter</a>
+<a class="text-slate-400 hover:text-primary transition-colors uppercase tracking-widest text-[10px] font-bold" href="#">Contact</a>
+</div>
+<div class="text-slate-600 text-[10px] uppercase tracking-widest font-bold">
+        © 2024 Stone Oven 3D Experience.
+      </div>
+</div>
+</footer>
+
+</body></html>
