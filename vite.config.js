@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: './',
+  base: '/Stone-Oven/',
   server: {
     allowedHosts: true
   }
