@@ -1,3 +1,4 @@
+import brandLogo from '/logo.png?url';
 export function renderNavbar() {
     const baseUrl = import.meta.env.BASE_URL;
     const nav = document.getElementById('navbar');
@@ -5,7 +6,7 @@ export function renderNavbar() {
         <nav class="navbar">
             <div class="nav-container">
                 <a href="#/" class="logo">
-                    <img src="${baseUrl}logo.png" alt="Stone Oven Logo" class="nav-logo-img">
+                    <img src="${brandLogo}" alt="Stone Oven Logo" class="nav-logo-img">
                 </a>
                 
                 <div class="mobile-menu-toggle" id="mobile-toggle" style="display: none;">

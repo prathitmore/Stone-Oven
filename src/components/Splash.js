@@ -1,3 +1,4 @@
+import brandLogo from '/logo.png?url';
 export function renderSplash() {
     const baseUrl = import.meta.env.BASE_URL;
     return `
@@ -7,7 +8,7 @@ export function renderSplash() {
             
             <!-- LOGO -->
             <div id="splash-logo-wrap" style="position: relative; z-index: 2; opacity: 0; transform: scale(0.9); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);">
-                <img src="${baseUrl}logo.png" alt="Stone Oven" style="width: clamp(300px, 40vw, 550px); height: auto; filter: drop-shadow(0 0 50px rgba(255, 60, 0, 0.4));">
+                <img src="${brandLogo}" alt="Stone Oven" style="width: clamp(300px, 40vw, 550px); height: auto; filter: drop-shadow(0 0 50px rgba(255, 60, 0, 0.4));">
             </div>
 
             <!-- GLOW OVERLAY -->
@@ -16,6 +17,7 @@ export function renderSplash() {
     `;
 }
 
+import brandLogo from '/logo.png?url';
 export function initSplash(onComplete) {
     const container = document.getElementById('splash-container');
     const logoWrap = document.getElementById('splash-logo-wrap');
